@@ -1,0 +1,80 @@
+{
+    "timestamp": "2026-09-28 13:06:48",
+    "target_resolution": [
+        640,
+        480
+    ],
+    "autofocus_disabled": true,
+    "autofocus_states": {
+        "Cam 1": false,
+        "Cam 2": false,
+        "Cam 3": false,
+        "Cam 4": false
+    },
+    "focus_values": {
+        "Cam 1": 27,
+        "Cam 2": 37,
+        "Cam 3": 0,
+        "Cam 4": 27
+    },
+    "focus_by_serial": {
+        "6B24796F": 27,
+        "9328796F": 37,
+        "BEDDD37F": 0,
+        "F1ADD37F": 27
+    },
+    "focus_by_role": {
+        "front": 27,
+        "left_wrist": 37,
+        "top": 0,
+        "right_wrist": 27
+    },
+    "role_to_serial": {
+        "left_wrist": "9328796F",
+        "top": "BEDDD37F",
+        "front": "6B24796F",
+        "right_wrist": "F1ADD37F"
+    },
+    "camera_serials": {
+        "9328796F": "left_wrist",
+        "BEDDD37F": "top",
+        "6B24796F": "front",
+        "F1ADD37F": "right_wrist"
+    },
+    "camera_mapping": {
+        "front": "/dev/v4l/by-id/usb-046d_C922_Pro_Stream_Webcam_6B24796F-video-index0",
+        "left_wrist": "/dev/v4l/by-id/usb-046d_C922_Pro_Stream_Webcam_9328796F-video-index0",
+        "right_wrist": "/dev/v4l/by-id/usb-046d_C922_Pro_Stream_Webcam_F1ADD37F-video-index0",
+        "top": "/dev/v4l/by-id/usb-046d_C922_Pro_Stream_Webcam_BEDDD37F-video-index0"
+    },
+    "devices_detected": [
+        {
+            "device_path": "/dev/video4",
+            "by_id_path": "/dev/v4l/by-id/usb-046d_C922_Pro_Stream_Webcam_6B24796F-video-index0",
+            "name": "usb-046d_C922_Pro_Stream_Webcam_6B24796F-video-index0",
+            "real_path": "/dev/video4",
+            "serial": "6B24796F"
+        },
+        {
+            "device_path": "/dev/video0",
+            "by_id_path": "/dev/v4l/by-id/usb-046d_C922_Pro_Stream_Webcam_9328796F-video-index0",
+            "name": "usb-046d_C922_Pro_Stream_Webcam_9328796F-video-index0",
+            "real_path": "/dev/video0",
+            "serial": "9328796F"
+        },
+        {
+            "device_path": "/dev/video6",
+            "by_id_path": "/dev/v4l/by-id/usb-046d_C922_Pro_Stream_Webcam_BEDDD37F-video-index0",
+            "name": "usb-046d_C922_Pro_Stream_Webcam_BEDDD37F-video-index0",
+            "real_path": "/dev/video6",
+            "serial": "BEDDD37F"
+        },
+        {
+            "device_path": "/dev/video2",
+            "by_id_path": "/dev/v4l/by-id/usb-046d_C922_Pro_Stream_Webcam_F1ADD37F-video-index0",
+            "name": "usb-046d_C922_Pro_Stream_Webcam_F1ADD37F-video-index0",
+            "real_path": "/dev/video2",
+            "serial": "F1ADD37F"
+        }
+    ]
+}

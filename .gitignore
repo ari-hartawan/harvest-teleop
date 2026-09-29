@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ROS 2 & Catkin/Colcon
+build/
+install/
+log/
+*.rviz
+
+# OS & Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Dataset & Data
+*.bag
+*.db3
+*.parquet
+*.mp4
+*.hdf5
+outputs/
+harvest_checkpoints/
