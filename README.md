@@ -114,17 +114,18 @@ When you run the **Keyboard Interface** (Terminal 4), follow this key sequence t
 
 ```mermaid
 graph TD
-    State0[State 0: Standby] -->|Press '0' or '1'| State1[State 1: Master Homing]
-    State1 -->|Press '2'| State2[State 2: Slave Robot Homing]
-    State2 -->|Press '3'| State3[State 3: Live Teleoperation Engaged]
+    State0[State 0: Standby / Startup] -->|Press 'SPACE'| State2[State 2: Initial Homing <br> Master & Slave]
+    State2 -->|Press 'SPACE'| State3[State 3: Live Teleoperation Engaged <br> Unrecorded]
     State3 -->|Press 'SPACE'| State4[State 4: Recording Dataset]
-    State4 -->|Press 'SPACE'| State5[State 5: Stop Recording & Lock Robot]
-    State5 --> State0
+    State4 -->|Press 'SPACE'| State5[State 5: Stop, Save & Auto-Home]
+    State4 -.->|Press '0'| Cancel[Cancel Recording & Auto-Home]
+    State5 --> State2
+    Cancel -.-> State2
 ```
 
-1.  **State 0 (Standby)**: System is idle.
-2.  **State 1 (Master Homing - press `0` or `1`)**: The master arm moves autonomously to its home position.
-3.  **State 2 (Slave Homing - press `2`)**: The Kinova Gen3 slave arms move autonomously to their home positions.
-4.  **State 3 (Live Teleop - press `3`)**: Switches controllers on the arms to velocity control and loosens master servo torque. **Teleoperation is now active.**
-5.  **State 4 (Start Recording - press `SPACE`)**: Seamlessly starts recording arm trajectories and camera feeds to an HDF5 dataset.
-6.  **State 5 (Stop & Lock - press `SPACE`)**: Stops logging, saves the dataset, locks the master device torque, and switches the slave robots back to position trajectory controllers to prevent sagging.
+1.  **State 0 (Standby)**: System is idle. Waiting for initial calibration.
+2.  **State 2 (Initial Homing - press `SPACE`)**: Both the master arm and the slave robot move autonomously to their starting home positions.
+3.  **State 3 (Live Teleop - press `SPACE`)**: Teleoperation is now active. The robot responds to the master, allowing you to position your hands for the starting stance. (Not recording yet).
+4.  **State 4 (Start Recording - press `SPACE`)**: Seamlessly starts recording arm trajectories and camera feeds to the dataset.
+5.  **State 5 (Stop, Save & Auto-Home - press `SPACE`)**: Stops logging, saves the dataset, and automatically returns the master and slave back to the home position safely.
+6.  **Cancel (Press `0`)**: If a mistake is made during recording (State 4), press `0` to instantly cancel the recording, discard the data, and return to home safely.
